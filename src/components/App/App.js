@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Feeling from '../Feeling/Feeling';
 import axios from 'axios';
 import './App.css';
 
@@ -10,6 +11,7 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
+        <Feeling />
         <br/>
       </div>
     );
