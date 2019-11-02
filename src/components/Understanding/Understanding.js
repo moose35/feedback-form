@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Understanding extends Component {
+  handleUnderstanding = (event) =>{
+    event.preventDefault();
+    console.log('Understanding clicked');
+    this.props.history.push("/support");
+}
   render() {
     return (
       <div >
         <h1>How well are you understanding the content?</h1>
         Understanding?
        <form onSubmit={this.handleUnderstanding}>
-          <select name="feelings">
+          <select name="understanding">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -19,7 +24,6 @@ class Understanding extends Component {
           <button>Next</button>
         </form>
       </div>
-      </div >
     );
   }
 }
