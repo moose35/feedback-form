@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Understand extends Component {
+class Understanding extends Component {
   render() {
     return (
       <div >
@@ -11,4 +11,4 @@ class Understand extends Component {
   }
 }
 
-export default Understand;
+export default Understanding;
