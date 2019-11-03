@@ -6,7 +6,8 @@ class Feeling extends Component {
   handleFeeling = (event) => {
     event.preventDefault();
     console.log('Feelings clicked');
-    this.props.history.push("/understanding");
+    // this.props.dispatch({type: 'GET_FEELINGS'});
+    // this.props.history.push("/understanding");
   }
 
   render() {
