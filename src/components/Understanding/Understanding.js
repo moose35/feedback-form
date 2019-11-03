@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Understanding extends Component {
-  handleUnderstanding = (event) =>{
+  handleUnderstanding = (event) => {
     event.preventDefault();
     console.log('Understanding clicked');
     this.props.history.push("/support");
-}
+  }
+
   render() {
     return (
       <div >
