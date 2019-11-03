@@ -5,8 +5,8 @@ class Support extends Component {
 
   handleSupport = (event) => {
     event.preventDefault();
-    console.log('Understanding clicked');
-    this.props.history.push("/support");
+    console.log('Support clicked');
+    this.props.history.push("/comments");
   }
 
   render() {

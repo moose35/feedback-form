@@ -22,6 +22,7 @@ class App extends Component {
             <Route exact path="/understanding" component={Understanding}/>
             <Route exact path="/support" component={Support}/>
             <Route exact path="/comments" component={Comments}/>
+            <Route exact path="/review" component={Comments}/>
             <ul>
               <li>
                 <Link to="/">Feeling</Link>
@@ -34,6 +35,9 @@ class App extends Component {
               </li>
               <li>
               <Link to="/comments">Comments</Link>
+              </li>
+              <li>
+              <Link to="/review">Review</Link>
               </li>
             </ul>
       </div>
