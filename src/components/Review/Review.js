@@ -15,7 +15,7 @@ class Review extends Component {
       <div >
         <h1>Review this Feedback</h1>
         <form onSubmit={this.handleSubmit}>
-          Feelings: {this.props.fullReducer.feeling}
+          Feelings: {this.props.feelingsReducer.feeling}
           <br />Understanding: {this.props.fullReducer.understanding}
           <br />Support:
        <br />Comments:

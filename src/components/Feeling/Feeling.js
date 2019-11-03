@@ -3,21 +3,20 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 class Feeling extends Component {
-state = {
-  feeling: '',
-  
-}
+  state = {
+    feeling: '',
+  }
 
-handleChangeFor = propertyName => event => {
-  this.setState({
-          [propertyName]: event.target.value
-  });
-}
+  handleChangeForFeeling = propertyName => event => {
+    this.setState({
+      [propertyName]: event.target.value
+    });
+  }
 
-  handleFeeling = (event) => {
+  handleFeelingButton = (event) => {
     event.preventDefault();
     console.log('Feelings clicked');
-    this.props.dispatch({type: 'GET_FEELINGS', payload: this.state.feeling});
+    this.props.dispatch({ type: 'GET_FEELINGS', payload: this.state.feeling });
     this.props.history.push("/understanding");
   }
 
@@ -26,8 +25,8 @@ handleChangeFor = propertyName => event => {
       <div>
         <h1>How are you feeling today?</h1>
         Feeling?
-       <form onSubmit={this.handleFeeling}>
-          <select name="feeling" onChange={this.handleChangeFor('feeling')}>
+       <form onSubmit={this.handleFeelingButton}>
+          <select name="feeling" onChange={this.handleChangeForFeeling('feeling')}>
             <option>--</option>
             <option value="1">1</option>
             <option value="2">2</option>
