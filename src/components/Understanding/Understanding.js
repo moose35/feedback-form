@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 class Understanding extends Component {
@@ -13,6 +14,7 @@ class Understanding extends Component {
   handleUnderstandingButton = (event) => {
     event.preventDefault();
     console.log('Understanding clicked');
+    this.props.dispatch({type: 'GET_UNDER', payload: this.state.understanding});
     this.props.history.push("/support");
   }
 
@@ -38,5 +40,7 @@ class Understanding extends Component {
     );
   }
 }
-
-export default Understanding;
+const mapReduxStateToProps = (reduxState) => {
+  return reduxState;
+}
+export default connect(mapReduxStateToProps)(Understanding);

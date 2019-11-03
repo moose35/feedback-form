@@ -16,6 +16,14 @@ const feelingsReducer = (state = [], action) => {
     return state;
 }
 
+const understandingReducer = (state = [], action) => {
+    //recieves value from Understanding component
+    if (action.type === 'GET_UNDER') {
+        return action.payload;
+    }
+    return state;
+}
+
 const fullReducer = (state = [], action) => {
     //recieves all completed feedback form from database
     if (action.type === 'FULL_REVIEW') {
@@ -26,6 +34,7 @@ const fullReducer = (state = [], action) => {
 const storeInstance = createStore(
     combineReducers({
         feelingsReducer,
+        understandingReducer,
         fullReducer,
     }),
     applyMiddleware(logger),
