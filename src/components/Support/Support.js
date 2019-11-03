@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 class Support extends Component {
 
@@ -30,5 +30,7 @@ class Support extends Component {
     );
   }
 }
-
-export default Support;
+const mapReduxStateToProps = (reduxState) => {
+  return reduxState;
+}
+export default connect(mapReduxStateToProps)(Support);
