@@ -5,7 +5,8 @@ class Review extends Component {
 
   handleSubmit = (event) => {
     console.log('Submit clicked');
-    this.props.history.push("/");
+    event.preventDefault();
+    this.props.history.push("/success");
   }
   render() {
     return (

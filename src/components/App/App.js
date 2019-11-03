@@ -5,6 +5,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
