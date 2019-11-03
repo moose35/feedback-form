@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 class Review extends Component {
 
@@ -16,10 +15,10 @@ class Review extends Component {
         <h1>Review this Feedback</h1>
         <form onSubmit={this.handleSubmit}>
           Feelings: {this.props.feelingsReducer.feeling}
-          <br />Understanding: {this.props.fullReducer.understanding}
+          <br />Understanding: {this.props.understandingReducer.understanding}
           <br />Support:
-       <br />Comments:
-       <button>Submit</button>
+          <br />Comments:
+          <br /><button>Submit</button>
         </form>
       </div>
     );

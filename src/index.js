@@ -32,6 +32,14 @@ const supportReducer = (state = [], action) => {
     return state;
 }
 
+const commentReducer = (state = [], action) => {
+    //recieves value from Comment component
+    if (action.type === 'GET_COMMENT') {
+        return action.payload;
+    }
+    return state;
+}
+
 const fullReducer = (state = [], action) => {
     //recieves all completed feedback form from database
     if (action.type === 'FULL_REVIEW') {
@@ -44,6 +52,7 @@ const storeInstance = createStore(
         feelingsReducer,
         understandingReducer,
         supportReducer,
+        commentReducer,
         fullReducer,
     }),
     applyMiddleware(logger),
