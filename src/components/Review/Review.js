@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 class Review extends Component {
@@ -8,20 +9,23 @@ class Review extends Component {
     event.preventDefault();
     this.props.history.push("/success");
   }
+
   render() {
     return (
       <div >
-       <h1>Review this Feedback</h1>
-       <form onSubmit={this.handleSubmit}>
-       Feelings:
-       <br />Understanding:
-       <br />Support:
+        <h1>Review this Feedback</h1>
+        <form onSubmit={this.handleSubmit}>
+          Feelings: {this.props.fullReducer.feeling}
+          <br />Understanding: {this.props.fullReducer.understanding}
+          <br />Support:
        <br />Comments:
        <button>Submit</button>
-       </form>
+        </form>
       </div>
     );
   }
 }
-
-export default Review;
+const mapReduxStateToProps = (reduxState) => {
+  return reduxState;
+}
+export default connect(mapReduxStateToProps)(Review);

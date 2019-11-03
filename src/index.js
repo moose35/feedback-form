@@ -9,6 +9,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 const feelingsReducer = (state = [], action) => {
+    //recieves value from Feelings component
     if (action.type === 'GET_FEELINGS') {
         return action.payload;
     }
@@ -16,6 +17,7 @@ const feelingsReducer = (state = [], action) => {
 }
 
 const fullReducer = (state = [], action) => {
+    //recieves all completed feedback form from database
     if (action.type === 'FULL_REVIEW') {
         return action.payload;
     } return state;
