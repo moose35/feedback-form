@@ -6,6 +6,7 @@ class Success extends Component {
     return (
       <div >
        <h1>Thank you!</h1>
+       
       </div>
     );
   }

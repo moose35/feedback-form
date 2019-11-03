@@ -14,10 +14,10 @@ class Review extends Component {
       <div >
         <h1>Review this Feedback</h1>
         <form onSubmit={this.handleSubmit}>
-          Feelings: {this.props.feelingsReducer.feeling}
-          <br />Understanding: {this.props.understandingReducer.understanding}
-          <br />Support:
-          <br />Comments:
+          Feelings: {this.props.feelingsReducer}
+          <br />Understanding: {this.props.understandingReducer}
+          <br />Support: {this.props.supportReducer}
+          <br />Comments: {this.props.commentReducer}
           <br /><button>Submit</button>
         </form>
       </div>

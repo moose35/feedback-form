@@ -16,7 +16,7 @@ class Comments extends Component {
     event.preventDefault();
     console.log('Comment clicked');
     this.props.dispatch({ type: 'GET_COMMENT', payload: this.state.comment });
-    // this.props.history.push("/review");
+    this.props.history.push("/review");
 }
   render() {
     return (
