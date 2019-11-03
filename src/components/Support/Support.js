@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Support extends Component {
+  state = {
+    support: '',
+  }
 
-  handleSupport = (event) => {
+  handleChangeForSupport = propertyName => event => {
+    this.setState({
+      [propertyName]: event.target.value
+    });
+  }
+
+  handleSupportButton = (event) => {
     event.preventDefault();
     console.log('Support clicked');
+    this.props.dispatch({ type: 'GET_SUPPORT', payload: this.state.support });
     this.props.history.push("/comments");
   }
 
@@ -14,9 +24,9 @@ class Support extends Component {
       <div >
         <h1>How well are you being supported?</h1>
         Support?
-       <form onSubmit={this.handleSupport}>
-          <select name="support">
-          <option>--</option>
+       <form onSubmit={this.handleSupportButton}>
+          <select name="support" onChange={this.handleChangeForSupport('support')}>>
+            <option>--</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -26,6 +36,7 @@ class Support extends Component {
           <br /><br />
           <button>Next</button>
         </form>
+        <pre>{JSON.stringify(this.state, null, 2)}</pre>
       </div>
     );
   }
