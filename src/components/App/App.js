@@ -20,7 +20,7 @@ class App extends Component {
     //get route to get information from database
     axios.get('/api/full-review')
       .then((response) => {
-        this.props.dispatch({type: 'FULL_REVIEW', payload: response.data});
+        this.props.dispatch({ type: 'FULL_REVIEW', payload: response.data });
       }).catch((error) => {
         console.log('Error on GET route:', error);
       });

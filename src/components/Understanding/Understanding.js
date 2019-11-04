@@ -17,8 +17,8 @@ class Understanding extends Component {
     if (this.state.understanding === '') {
       alert('Please select a number 1-5')
     } else {
-    this.props.dispatch({type: 'GET_UNDER', payload: this.state.understanding});
-    this.props.history.push("/support");
+      this.props.dispatch({ type: 'GET_UNDER', payload: this.state.understanding });
+      this.props.history.push("/support");
     }
   }
 

@@ -40,7 +40,7 @@ const commentReducer = (state = [], action) => {
     return state;
 }
 
-const restartReducer = (state =[], action) =>{
+const restartReducer = (state = [], action) => {
     if (action.type === 'CLEAR_FEEDBACK') {
         return []
     }
