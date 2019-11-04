@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Review extends Component {
 
   handleSubmit = (event) => {
-    console.log('Submit clicked');
     event.preventDefault();
-    this.props.history.push("/success");
+    console.log('Submit clicked')
+    axios.post('/api/full-review', this.props.feelingsReducer)
+    .then((response) => {
+      console.log(response);
+      this.props.history.push("/success");
+        this.props.dispatch({ type: 'CLEAR_FEEDBACK' })
+    })
+    .catch((error) => {
+        console.log('error in POST', error);
+    })
   }
 
   render() {

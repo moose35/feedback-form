@@ -40,6 +40,13 @@ const commentReducer = (state = [], action) => {
     return state;
 }
 
+const restartReducer = (state =[], action) =>{
+    if (action.type === 'CLEAR_FEEDBACK') {
+        return []
+    }
+    return state
+}
+
 const fullReducer = (state = [], action) => {
     //recieves all completed feedback form from database
     if (action.type === 'FULL_REVIEW') {
@@ -53,6 +60,7 @@ const storeInstance = createStore(
         understandingReducer,
         supportReducer,
         commentReducer,
+        restartReducer,
         fullReducer,
     }),
     applyMiddleware(logger),
