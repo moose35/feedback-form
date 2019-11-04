@@ -7,15 +7,7 @@ class Review extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log('Submit clicked')
-    axios.post('/api/full-review', this.props.feelingsReducer)
-    .then((response) => {
-      console.log(response);
-      this.props.history.push("/success");
-        this.props.dispatch({ type: 'CLEAR_FEEDBACK' })
-    })
-    .catch((error) => {
-        console.log('error in POST', error);
-    })
+    this.props.history.push("/success");
   }
 
   render() {
@@ -37,3 +29,13 @@ const mapReduxStateToProps = (reduxState) => {
   return reduxState;
 }
 export default connect(mapReduxStateToProps)(Review);
+
+
+// axios.post('/api/full-review', this.props.feelingsReducer)
+//     .then((response) => {
+//       console.log(response);
+//       this.props.history.push("/success");
+//         this.props.dispatch({ type: 'CLEAR_FEEDBACK' })
+//     })
+//     .catch((error) => {
+//         console.log('error in POST', error);

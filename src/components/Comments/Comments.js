@@ -15,8 +15,12 @@ class Comments extends Component {
   handleCommentButton = (event) =>{
     event.preventDefault();
     console.log('Comment clicked');
+    if (this.state.comment === '') {
+      alert('Please leave a comment.')
+    } else {
     this.props.dispatch({ type: 'GET_COMMENT', payload: this.state.comment });
     this.props.history.push("/review");
+    }
 }
   render() {
     return (

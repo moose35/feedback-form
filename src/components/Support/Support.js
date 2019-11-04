@@ -15,8 +15,12 @@ class Support extends Component {
   handleSupportButton = (event) => {
     event.preventDefault();
     console.log('Support clicked');
+    if(this.state.support === '') {
+      alert('Please select a number 1-5')
+    } else {
     this.props.dispatch({ type: 'GET_SUPPORT', payload: this.state.support });
     this.props.history.push("/comments");
+    }
   }
 
   render() {

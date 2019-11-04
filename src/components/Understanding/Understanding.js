@@ -14,8 +14,12 @@ class Understanding extends Component {
   handleUnderstandingButton = (event) => {
     event.preventDefault();
     console.log('Understanding clicked');
+    if (this.state.understanding === '') {
+      alert('Please select a number 1-5')
+    } else {
     this.props.dispatch({type: 'GET_UNDER', payload: this.state.understanding});
     this.props.history.push("/support");
+    }
   }
 
   render() {

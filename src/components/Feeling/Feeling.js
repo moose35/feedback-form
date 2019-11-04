@@ -15,8 +15,12 @@ class Feeling extends Component {
   handleFeelingButton = (event) => {
     event.preventDefault();
     console.log('Feelings clicked');
-    this.props.dispatch({ type: 'GET_FEELINGS', payload: this.state.feeling });
-    this.props.history.push("/understanding");
+    if (this.state.feeling === '') {
+      alert('Please select a number 1-5')
+    } else {
+      this.props.dispatch({ type: 'GET_FEELINGS', payload: this.state.feeling });
+      this.props.history.push("/understanding");
+    }
   }
 
   render() {
